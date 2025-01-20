@@ -33,13 +33,13 @@ This toggles proxy of following applications:
 > 
 > You can download the executable directly from the [releases](https://github.com/bhupesh98/Proxy-Automation/releases) section. Now, skip to step 4.
 
-2. To make this script as an executable, you need to install the `ps2exe` module. You can install it using the following command:
+2. **[Only for Contributors]** To make this script as an executable, you need to install the `ps2exe` module. You can install it using the following command:
 
     ```powershell
     Install-Module ps2exe
     ```
 
-3. To convert the script to an executable, run the following command:
+3. **[Only for Contributors]** To convert the script to an executable, run the following command:
 
     ```powershell
     Invoke-PS2EXE .\ToggleProxy.ps1 .\toggle-proxy.exe
