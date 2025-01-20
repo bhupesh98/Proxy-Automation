@@ -26,8 +26,12 @@ This toggles proxy of following applications:
     git clone https://github.com/bhupesh98/Proxy-Automation.git && cd Proxy-Automation
     ```
 
-    > [!NOTE]
-    > You need to run these commands in PowerShell 5 or above in Administrator mode (Installation of [Powershell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4) Latest release is recommended for features). You can download the executable directly from the [releases](https://github.com/bhupesh98/Proxy-Automation/releases) section.
+> [!NOTE]
+> You need to run these commands in PowerShell 5 or above in Administrator mode (Installation of [Powershell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4) Latest release is recommended for features).
+> 
+> **OR**
+> 
+> You can download the executable directly from the [releases](https://github.com/bhupesh98/Proxy-Automation/releases) section. Now, skip to step 4.
 
 2. To make this script as an executable, you need to install the `ps2exe` module. You can install it using the following command:
 
