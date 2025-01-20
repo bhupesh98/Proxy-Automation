@@ -15,11 +15,11 @@ if ($?) {
     Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -Name ProxyEnable -Value 1
     # In .npmrc
     if (Test-Path $NpmrcPath) {
-        Get-Content $NpmrcPath -Raw -replace "(?m)^#\s*($Pattern)", '$1' | Set-Content $NpmrcPath -Force -NoNewline
+        (Get-Content $NpmrcPath -Raw) -replace "(?m)^#\s*($Pattern)", '$1' | Set-Content $NpmrcPath -Force -NoNewline
     }
     # In .gitconfig
     if (Test-Path $GitConfigPath) {
-        Get-Content $GitConfigPath -Raw -replace "(?m)^(\s*)#\s*($Pattern)", '$1$2' | Set-Content $GitConfigPath -Force -NoNewline
+        (Get-Content $GitConfigPath -Raw) -replace "(?m)^(\s*)#\s*($Pattern)", '$1$2' | Set-Content $GitConfigPath -Force -NoNewline
     }
     # In vscode/settings.json
     if (Test-Path $VSCodeSettingPath) {
