@@ -7,44 +7,68 @@ Based on contributions and popularity, I will be adding support for other operat
 ## Features
 
 > [!NOTE]
-> This script just toggles proxy so it doesn't require credential access. This also means you need to have the proxy settings configured in your system once.
+> This script just toggles proxy so it doesn't require credential access. This also means you need to have the proxy settings configured in your system and the applications you want to toggle proxy for once.
 
 This toggles proxy of following applications:
 
-1. System Proxy
-2. Git
-3. NPM
-4. VS Code
+1. System Proxy (through Registry)
+2. Git (through `.gitconfig`)
+3. NPM (through `.npmrc`)
+4. VS Code (through `settings.json`)
 
 ... More to add based on contributions/suggestions.
 
-## How to Contribute
+## Installation
 
-1. Fork the repository
-
-2. Clone the repository to your local machine
+1. Clone the repository to your local machine
 
 ```bash
 git clone https://github.com/bhupesh98/Proxy-Automation.git && cd Proxy-Automation
 ```
 
-3. To make this script as an executable, you need to install the `ps2exe` module. You can install it using the following command:
+2. To make this script as an executable, you need to install the `ps2exe` module. You can install it using the following command:
 
 ```powershell
 Install-Module ps2exe
 ```
 
-4. To convert the script to an executable, run the following command:
+3. To convert the script to an executable, run the following command:
 
 ```powershell
 Invoke-PS2EXE .\ToggleProxy.ps1 .\toggle-proxy.exe
 ```
 
-5. Now, you can run the `toggle-proxy.exe` file to toggle the proxy settings on your machine. This needs to be configured in task scheduler to run when you connect to a network. I've prepared a powershell script for that as well. You can run the following command to configure the task scheduler:
+4. Now, you can run the `toggle-proxy.exe` file to toggle the proxy settings on your machine. This needs to be configured in task scheduler to run when you connect to a network. Following are the steps with images to help you set things up:
 
-```powershell
-.\Install-ToggleProxyTask-Contributor.ps1
-```
+    - Press `Win + R` and type `taskschd.msc` to open Task Scheduler.
+
+        ![Step-1](images/1.jpg)
+    
+    - Click on `Create Task` on the right side of the window.
+
+        ![Step-2](images/2.jpg)
+
+    - Fill in the details as shown in the image below. Make sure to check the `Run with highest privileges` checkbox.
+
+        ![Step-3](images/3.jpg)
+
+    - Click on the `Triggers` tab and then click on `New`. Fill in the details as shown in the image below. Click on `OK`.
+
+        ![Step-4](images/4.jpg)
+
+    - Click on the `Actions` tab and then click on `New`. Browse the `toggle-proxy.exe` file. Click on `OK`.
+
+        ![Step-5](images/5.jpg)
+
+    - Click on the `Conditions` tab and uncheck the `Start the task only if the computer is on AC power` checkbox and check the `Start Only if the following network connection is available` checkbox. Keep the `Any connection` option selected. Click on `OK`.
+
+        ![Step-6](images/6.jpg)
+
+5. You are all set. The script will run every time you connect to a network.
+
+## Contributions
+
+Contributions are welcome. Feel free to open an issue or a pull request.
 
 ## License
 
