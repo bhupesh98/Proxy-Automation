@@ -20,6 +20,17 @@ This toggles proxy of following applications:
 
 ## Installation
 
+> [!NOTE]
+> ### **This script needs to be run in Administrator mode.**
+> ALso, it's recommended to save your `proxyUser` and `proxyPass` in Registry for secure access. You can do this by running the following command in PowerShell:
+>
+>    ```powershell
+>    $proxyUser = 'your-username' # Replace with your username
+>    $proxyPass = 'your-password' # Replace with your password
+>    Set-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -Name ProxyUser -Value  $proxyUser
+>    Set-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -Name ProxyPass -Value  $proxyPass
+>    ```
+
 1. Clone the repository to your local machine
 
     ```bash
@@ -31,7 +42,12 @@ This toggles proxy of following applications:
 > 
 > **OR**
 > 
-> You can download the executable directly from the [releases](https://github.com/bhupesh98/Proxy-Automation/releases) section. Now, skip to step 4.
+> You can download the executable directly from the [releases](https://github.com/bhupesh98/Proxy-Automation/releases/latest) section.Use the following powershell command to download it:
+> 
+> ```powershell
+> Invoke-WebRequest -Uri 'https://github.com/bhupesh98/Proxy-Automation/releases/download/v1.1.0/toggle-proxy.exe' -OutFile 'toggle-proxy.exe'
+> ```
+> Now, skip to step 4.
 
 2. **[Only for Contributors]** To make this script as an executable, you need to install the `ps2exe` module. You can install it using the following command:
 
